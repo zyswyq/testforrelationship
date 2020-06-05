@@ -1,0 +1,3 @@
+include ':transmit',':puppetmodel'
+rootProject.name='My Application'
+
