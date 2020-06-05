@@ -29,6 +29,7 @@ import java.util.Map;
  *
  * @author: hehongzhen
  * @date: 2020/05/18
+ * 
  */
 @SuppressWarnings("unused")
 public class TransmitManager implements ITransmitSender, IEventTransform {
