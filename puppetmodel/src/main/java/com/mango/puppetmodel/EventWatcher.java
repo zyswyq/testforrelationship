@@ -12,6 +12,7 @@ public class EventWatcher {
 
     public static final String EVENT_MESSAGE = "chat_message";
     public static final String EVENT_NEW_FRIEND = "new_friend_request";
+    public static final String EVENT_PUPPET_STOP = "puppet_stop";
 
     // 事件名称
     public String event_name;
