@@ -50,6 +50,7 @@ public class Job {
     public static final String CHANGE_USER_TAG = "change_user_tag";
     public static final String CREATE_CHATROOM = "create_chatroom";
     public static final String GET_CHATROOM_QRCODE = "get_chatroom_qrcode";
+    public static final String RETRANSMIT_MSG = "retransmit_msg";
 
     // 由远程服务端生成的任务唯一标识
     public long job_id;
