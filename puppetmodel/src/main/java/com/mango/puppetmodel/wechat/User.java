@@ -39,4 +39,7 @@ public class User {
     // 资源文件在本地的路径
     public String icon_file_url;
 
+    // 用戶的tags，用,分割
+    public String tags;
+
 }
