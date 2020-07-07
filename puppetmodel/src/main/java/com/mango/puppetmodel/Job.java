@@ -56,6 +56,7 @@ public class Job {
     public static final String GET_SNS = "get_sns";
     public static final String SEARCH_FRIEND = "search_friend";
     public static final String FRIEND_APPLY = "friend_apply";
+    public static final String DELETE_FRIEND = "delete_friend";
 
     // 由远程服务端生成的任务唯一标识
     public long job_id;

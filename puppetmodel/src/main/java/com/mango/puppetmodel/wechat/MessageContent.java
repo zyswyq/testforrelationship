@@ -63,6 +63,14 @@ public class MessageContent {
 
     public String inviter_wxid;
 
+    public String describe;
+
+    public String thumburlIcon;
+
+    public String addUrl;
+
+    public String title;
+
     public List<InviteMember> members = new ArrayList<>();
 
 
