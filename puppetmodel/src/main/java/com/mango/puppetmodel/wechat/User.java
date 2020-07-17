@@ -42,4 +42,7 @@ public class User {
     // 用戶的tags，用,分割
     public String tags;
 
+    // v1_string
+    public String field_encryptUsername;
+
 }
