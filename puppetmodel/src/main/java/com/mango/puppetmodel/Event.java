@@ -29,6 +29,9 @@ public class Event {
     // 事件上报结果(仅本地控制器使用) 0:新事件未上报 1:上报已成功
     public int event_status;
 
+    // 当前登录用户
+    public String current_user;
+
     public String toString() {
         String str = new Gson().toJson(this);
         try  {

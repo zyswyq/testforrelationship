@@ -96,6 +96,9 @@ public class Job {
     // 任务回执url
     public String callback;
 
+    // 当前登录用户
+    public String current_user;
+
     public String toString() {
         String str = new Gson().toJson(this);
         try  {
