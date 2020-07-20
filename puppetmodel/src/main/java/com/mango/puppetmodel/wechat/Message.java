@@ -42,4 +42,6 @@ public class Message {
     // 解析后的参数
     public MessageContent content = new MessageContent();
 
+    //加密后的微信ID,只有第一次加好友系统提示信息传
+    public String field_encryptUsername;
 }
