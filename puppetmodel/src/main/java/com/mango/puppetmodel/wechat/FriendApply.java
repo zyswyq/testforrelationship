@@ -12,8 +12,12 @@ public class FriendApply {
         wxid = cursor.getString(cursor.getColumnIndex("talker"));
         nickname = cursor.getString(cursor.getColumnIndex("displayName"));
         String content = cursor.getString(cursor.getColumnIndex("fmsgContent"));
-        if (content.split("bigheadimgurl=\"").length>1){
-            headimgurl=content.split("bigheadimgurl=\"")[1].split("\"")[0];
+        try {
+            if (content.split("bigheadimgurl=\"").length>1){
+                headimgurl=content.split("bigheadimgurl=\"")[1].split("\"")[0];
+            }
+        }catch (Exception e){
+            headimgurl="";
         }
     }
 }

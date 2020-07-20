@@ -87,8 +87,8 @@ public class Job {
     // 任务执行失败时的原因 任务成功时为null
     public String error_message;
 
-    // 在网络错误时是否重复上报 0 否 1 是
-    public String job_repeat;
+    // 是否设置网络错误不重复上报 0 否 1 是
+    public int no_repeat;
 
     // 任务所需参数
     public JSONObject job_data;
