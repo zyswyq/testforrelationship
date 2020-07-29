@@ -23,6 +23,8 @@ public class Job {
     public static final String GET_LOCAL_USER_INFO = "get_local_user_info";
     public static final String SEND_TEXT_MESSAGE = "send_text_message";
     public static final String SEND_IMAGE = "send_image";
+    public static final String SEND_VIDEO = "send_video";
+    public static final String SEND_FILE= "send_file";
     public static final String SEND_TRANSFER = "send_transfer";
     public static final String SINGLE_RED = "single_red";
     public static final String CHATROOM_RED = "chatroom_red";

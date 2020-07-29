@@ -45,4 +45,16 @@ public class User {
     // v1_string
     public String field_encryptUsername;
 
+    // 性别 0 未设置 1 男 2 女
+    public int ender;
+
+    // 对应国内的市 例如 北京    对应国外国家名称 例如 阿富汗
+    public String place;
+
+    // 对应国内的区 例如 昌平    对应国外空字符
+    public String area;
+
+    // 签名
+    public String signature;
+
 }
