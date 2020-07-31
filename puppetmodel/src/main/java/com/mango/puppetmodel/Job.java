@@ -25,6 +25,8 @@ public class Job {
     public static final String SEND_IMAGE = "send_image";
     public static final String SEND_VIDEO = "send_video";
     public static final String SEND_FILE= "send_file";
+    public static final String DOWN_FILE= "down_file";
+    public static final String DOWN_VIDEO= "down_video";
     public static final String SEND_TRANSFER = "send_transfer";
     public static final String SINGLE_RED = "single_red";
     public static final String CHATROOM_RED = "chatroom_red";

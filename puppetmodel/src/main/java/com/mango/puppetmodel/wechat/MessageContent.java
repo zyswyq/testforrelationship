@@ -17,6 +17,10 @@ public class MessageContent {
 
     public String resource_url;
 
+    public String video_cover_url;
+
+    public String video_length;
+
     public int image_width;
 
     public int image_height;
