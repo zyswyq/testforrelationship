@@ -61,6 +61,13 @@ public class Job {
     public static final String SEARCH_FRIEND = "search_friend";
     public static final String FRIEND_APPLY = "friend_apply";
     public static final String DELETE_FRIEND = "delete_friend";
+    public static final String ADD_FRIEND_FROM_ROOM = "add_friend_from_room";
+    public static final String TRANSFER_ROOM_OWNER = "transfer_room_owner";
+    public static final String CHANGE_ROOM_CARD = "change_room_card";
+    public static final String FOLLOW_OFFICIAL_ACCOUNT = "follow_official_account";
+    public static final String URL_ADD_CHATROOM = "url_add_chatroom";
+    public static final String MODIFY_SELFCHAT_NICK = "modify_selfchat_nick";
+    public static final String MODIFY_CHATROOM_NICK = "modify_chatroom_nick";
 
     // 由远程服务端生成的任务唯一标识
     public long job_id;
