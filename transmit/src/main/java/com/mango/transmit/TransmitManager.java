@@ -29,7 +29,6 @@ import java.util.Map;
  *
  * @author: hehongzhen
  * @date: 2020/05/18
- * 
  */
 @SuppressWarnings("unused")
 public class TransmitManager implements ITransmitSender, IEventTransform {
@@ -64,8 +63,9 @@ public class TransmitManager implements ITransmitSender, IEventTransform {
     private BroadcastReceiver mReceiver = null;
     private ITransmitReceiver mListener = null;
     private Map<String, String> mTmpDataMap = null;
+    private String key = null;
 
-    private TransmitManager() {
+    public TransmitManager() {
     }
 
     public void destroy() {
@@ -80,10 +80,12 @@ public class TransmitManager implements ITransmitSender, IEventTransform {
 
     /**
      * 用于registerReceiver和Filter用以接收数据
+     *
      * @param context context
      * @param filters 木马插件所在应用的包名
      */
-    public void setRegister(Context context, ArrayList<String> filters) {
+    public void setRegister(Context context, ArrayList<String> filters, String key) {
+        this.key = key;
         for (int i = 0; i < filters.size(); i++) {
             Log.d("TransmitManager", "setRegister:" + filters.get(i));
         }
@@ -190,6 +192,7 @@ public class TransmitManager implements ITransmitSender, IEventTransform {
 
     /**
      * 获取context
+     *
      * @return context
      */
     private Context getContext() {
@@ -203,7 +206,7 @@ public class TransmitManager implements ITransmitSender, IEventTransform {
      * 确保在主线程处理接收到的内容
      *
      * @param packageName 发送方包名
-     * @param content 接收到的内容
+     * @param content     接收到的内容
      */
     private void dealReceiveContent(final String packageName, final String content) {
         if (Looper.getMainLooper() != Looper.myLooper()) {
@@ -222,7 +225,7 @@ public class TransmitManager implements ITransmitSender, IEventTransform {
      * 拆解数据
      *
      * @param packageName 发送方包名
-     * @param content 接收到的内容
+     * @param content     接收到的内容
      */
     private void splitData(String packageName, String content) {
         if (mListener == null) return;
@@ -250,7 +253,7 @@ public class TransmitManager implements ITransmitSender, IEventTransform {
      * 处理数据
      *
      * @param packageName 发送方包名
-     * @param content 接收到的内容
+     * @param content     接收到的内容
      */
     private void dealData(String packageName, String content) {
         if (mListener == null) return;
@@ -280,8 +283,9 @@ public class TransmitManager implements ITransmitSender, IEventTransform {
 
     /**
      * 发送内容
+     *
      * @param targetPackageName 目标进程包名
-     * @param string 内容
+     * @param string            内容
      */
     private void sendString(String targetPackageName, String string) {
         if (string != null && getContext() != null) {
@@ -291,12 +295,12 @@ public class TransmitManager implements ITransmitSender, IEventTransform {
             String sendString = string + HookTypeEndString;
             double divideLength = 10000.0;
             int divideInt = 10000;
-            long count = (long)Math.ceil(sendString.length() / divideLength);
+            long count = (long) Math.ceil(sendString.length() / divideLength);
             for (int i = 0; i < count; i++) {
                 Intent intent = new Intent(RECEIVE_FORE_STRING + targetPackageName);
                 String content = sendString.substring(i * divideInt, Math.min(sendString.length(), (i + 1) * divideInt));
                 intent.putExtra(CONTENT_KEY, content);
-                intent.putExtra(PACKAGE_KEY, getContext().getPackageName());
+                intent.putExtra(PACKAGE_KEY, key == null ? getContext().getPackageName() : key);
                 getContext().sendBroadcast(intent);
             }
         }
