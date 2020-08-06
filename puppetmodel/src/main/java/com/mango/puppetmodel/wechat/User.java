@@ -46,7 +46,7 @@ public class User {
     public String field_encryptUsername;
 
     // 性别 0 未设置 1 男 2 女
-    public int ender;
+    public int gender;
 
     // 对应国内的市 例如 北京    对应国外国家名称 例如 阿富汗
     public String place;
@@ -56,5 +56,7 @@ public class User {
 
     // 签名
     public String signature;
+
+    public String positionCode;
 
 }
