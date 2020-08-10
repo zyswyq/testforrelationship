@@ -24,9 +24,9 @@ public class Job {
     public static final String SEND_TEXT_MESSAGE = "send_text_message";
     public static final String SEND_IMAGE = "send_image";
     public static final String SEND_VIDEO = "send_video";
-    public static final String SEND_FILE= "send_file";
-    public static final String DOWN_FILE= "down_file";
-    public static final String DOWN_VIDEO= "down_video";
+    public static final String SEND_FILE = "send_file";
+    public static final String DOWN_FILE = "down_file";
+    public static final String DOWN_VIDEO = "down_video";
     public static final String SEND_TRANSFER = "send_transfer";
     public static final String SINGLE_RED = "single_red";
     public static final String CHATROOM_RED = "chatroom_red";
@@ -113,9 +113,11 @@ public class Job {
     // 当前登录用户
     public String current_user;
 
+    public int fail_stop = 0;
+
     public String toString() {
         String str = new Gson().toJson(this);
-        try  {
+        try {
             JSONObject jsonObject = new JSONObject(str);
             jsonObject.put("job_data", this.job_data);
             str = jsonObject.toString();

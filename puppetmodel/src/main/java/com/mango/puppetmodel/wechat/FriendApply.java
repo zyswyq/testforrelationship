@@ -7,10 +7,12 @@ public class FriendApply {
     public String wxid;
     public String nickname;
     public String headimgurl;
+    public String contentVerifyContent;
 
     public FriendApply(Cursor cursor) {
         wxid = cursor.getString(cursor.getColumnIndex("talker"));
         nickname = cursor.getString(cursor.getColumnIndex("displayName"));
+        contentVerifyContent = cursor.getString(cursor.getColumnIndex("contentVerifyContent"));
         String content = cursor.getString(cursor.getColumnIndex("fmsgContent"));
         try {
             if (content.split("bigheadimgurl=\"").length>1){
