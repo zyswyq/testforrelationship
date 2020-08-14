@@ -75,6 +75,8 @@ public class MessageContent {
 
     public String title;
 
+    public String msgSvrId;
+
     public List<InviteMember> members = new ArrayList<>();
 
 

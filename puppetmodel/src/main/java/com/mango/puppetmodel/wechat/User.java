@@ -59,4 +59,7 @@ public class User {
 
     public String positionCode;
 
+    //是否在黑名单 0 正常 1 在黑名单
+    public int isInBlack;
+
 }
