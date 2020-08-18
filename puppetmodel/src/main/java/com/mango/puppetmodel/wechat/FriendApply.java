@@ -7,19 +7,28 @@ public class FriendApply {
     public String wxid;
     public String nickname;
     public String headimgurl;
+    public String chatroomusername;
     public String contentVerifyContent;
+    public String fmsgContent;
 
     public FriendApply(Cursor cursor) {
         wxid = cursor.getString(cursor.getColumnIndex("talker"));
         nickname = cursor.getString(cursor.getColumnIndex("displayName"));
         contentVerifyContent = cursor.getString(cursor.getColumnIndex("contentVerifyContent"));
-        String content = cursor.getString(cursor.getColumnIndex("fmsgContent"));
+        fmsgContent = cursor.getString(cursor.getColumnIndex("fmsgContent"));
         try {
-            if (content.split("bigheadimgurl=\"").length>1){
-                headimgurl=content.split("bigheadimgurl=\"")[1].split("\"")[0];
+            if (fmsgContent.split("bigheadimgurl=\"").length > 1) {
+                headimgurl = fmsgContent.split("bigheadimgurl=\"")[1].split("\"")[0];
             }
-        }catch (Exception e){
-            headimgurl="";
+        } catch (Exception e) {
+            headimgurl = "";
+        }
+        try {
+            if (fmsgContent.split("chatroomusername=\"").length > 1) {
+                chatroomusername = fmsgContent.split("chatroomusername=\"")[1].split("\"")[0];
+            }
+        } catch (Exception e) {
+            chatroomusername = "";
         }
     }
 }
