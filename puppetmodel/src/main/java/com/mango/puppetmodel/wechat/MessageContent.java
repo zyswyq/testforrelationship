@@ -81,8 +81,8 @@ public class MessageContent {
 
     public double lat;
     public double lng;
-    public double small_title;
-    public double big_title;
+    public String small_title;
+    public String big_title;
 
     public List<InviteMember> members = new ArrayList<>();
 
