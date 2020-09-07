@@ -51,6 +51,8 @@ public class MessageContent {
 
     public String alias;
 
+    public String v4String;
+
     public String bigheadimgurl;
 
     public String nickname;
@@ -76,6 +78,11 @@ public class MessageContent {
     public String title;
 
     public String msgSvrId;
+
+    public double lat;
+    public double lng;
+    public double samll_title;
+    public double big_title;
 
     public List<InviteMember> members = new ArrayList<>();
 

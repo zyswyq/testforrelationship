@@ -62,7 +62,9 @@ public class User {
     //是否在黑名单 0 正常 1 在黑名单
     public int isInBlack;
 
-    //是否是普通用户 0普通 
+    //是否是普通用户 0普通
     public int field_verifyFlag;
+
+    public int field_type;
 
 }
